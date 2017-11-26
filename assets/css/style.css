@@ -1,0 +1,17 @@
+.container{
+	text-align: center;
+	padding-top: 30%;
+}
+
+#instruction{
+	text-align: center;
+	color: red;
+}
+
+#location{
+	color: pink;
+}
+
+#counter{
+	text-align: center;
+}
