@@ -7,6 +7,45 @@ $(document).ready(function() {
 	var correctAnswers = 0;
 	var inCorrectAnswers = 0;
 	var unAnswered = 0;
+	var resultCalculator = function() {
+		if(location == "New York"){
+			correctAnswers++
+			// else statements do not need parenthasis ()
+			// the statement needs to be in brakets
+		} else if(location == "") {
+			unAnswered++
+		} else {
+			inCorrectAnswers++
+		};
+
+		if(toy == "Coochie Kopi"){
+			correctAnswers++
+		} else{
+			inCorrectAnswers++
+		};
+		if(itch == "Her crotch"){
+			correctAnswers++
+		} else{
+			inCorrectAnswers++
+		}
+		if(holiday == "Thanksgiving"){
+			correctAnswers++
+		} else{
+			inCorrectAnswers++
+		}
+		if(collection == "Porcelain babies"){
+			correctAnswers++
+		} else{
+			inCorrectAnswers++
+		}
+
+		var resultString = ""
+		resultString += "<h2> Correct Answers: " + correctAnswers + "</h2>"
+		resultString += "<h2> Incorrect Answers: " + inCorrectAnswers + "</h2>"
+		resultString += "<h2> Unanswered: " + unAnswered + "</h2>"
+
+		$( "body" ).replaceWith(resultString);
+	};		
 	//attached click handler to input radio button
 	$("input[type=radio]").click(function(){
 		var formName = $(this).closest("form").attr('name')
@@ -34,52 +73,8 @@ $(document).ready(function() {
     	$("#counter").html(count--);
     	if(count == -1){
     		clearInterval(timer);
-
-    		if(location == "New York"){
-    			correctAnswers++
-    			// else statements do not need parenthasis ()
-    			// the statement needs to be in brakets
-			} else if(location == "") {
-				unAnswered++
-			} else {
-				inCorrectAnswers++
-			};
-
-			if(toy == "Coochie Kopi"){
-				correctAnswers++
-			} else{
-				inCorrectAnswers++
-			};
-			if(itch == "Her crotch"){
-				correctAnswers++
-			} else{
-				inCorrectAnswers++
-			}
-			if(holiday == "Thanksgiving"){
-				correctAnswers++
-			} else{
-				inCorrectAnswers++
-			}
-			if(collection == "Porcelain babies"){
-				correctAnswers++
-			} else{
-				inCorrectAnswers++
-			}
-			console.log('correct', correctAnswers);
-			console.log('incorrect', inCorrectAnswers);
-			console.log('unanswerd', unAnswered);
-
-			var resultString = ""
-			resultString += "<h2> Correct Answers: " + correctAnswers + "</h2>"
-			resultString += "<h2> Incorrect Answers: " + inCorrectAnswers + "</h2>"
-			resultString += "<h2> Unanswered: " + unAnswered + "</h2>"
-
-			$( "body" ).replaceWith(resultString);
 			
-
-
-
-
+    		resultCalculator();
     	};
 	}, 1000);
 })
