@@ -47,6 +47,13 @@ $(document).ready(function() {
 		$( "body" ).replaceWith(resultString);
 	};		
 	//attached click handler to input radio button
+	// we look for what form the input is in and set the form name to a variable
+	//var formName = $(this).closest("form").attr('name')
+	// we see if the form name is location to determine which quesiton the answer belongs to
+	//if (formName == "location"){
+  	// we set teir answer to a variable to keep track of what they selected for this "location" question
+  	//location = $(this).val();
+  	// .closest finds the closet HTML element that is a form
 	$("input[type=radio]").click(function(){
 		var formName = $(this).closest("form").attr('name')
 		if (formName == "location"){
